@@ -1,0 +1,30 @@
+[
+  {
+    "option":"中国",
+    "id":"+86"
+  },
+  {
+    "option":"中国香港",
+    "id":"+886"
+  },
+  {
+    "option":"中国台湾",
+    "id":"+852"
+  },
+  {
+    "option":"Brazil",
+    "id":"+551"
+  },
+  {
+    "option":"Malaysia",
+    "id":"+552"
+  },
+  {
+    "option":"Andorra",
+    "id":"+553"
+  },
+  {
+    "option":"Angola",
+    "id":"+554"
+  }
+]

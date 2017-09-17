@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能全部商品</title>
+</head>
+<link rel="stylesheet" href="../xmym/bootstrap/dist/css/bootstrap.css">
+<style>
+    .dropdown-menu-right li{
+        margin-top: 20px;
+    }
+    body{
+        background-color: rgb(240,240,240);
+        overflow-x: hidden;
+    }
+    .borderLeft{
+        border-left: 1px solid #c0c0c0;
+        position: absolute;
+        left: 3px;
+        top: 15px;
+        height: 20px;
+    }
+    .cart{
+        width: 500px;max-height: 300px; overflow-y: auto;
+    }
+    .colorBlock{
+        background-color: #ff6700;
+        width: 50px;
+        height: 50px;
+    }
+    .miLogo{
+        margin-top: -12px;
+    }
+    .secondDaoHang{
+        margin-left: 120px ;
+    }
+    .menuFont{
+        color: #fff;
+        border: 0px solid  rgba(0,0,0,0.6);
+        background-color: black;
+        width: 200px;
+        margin-left: -18px;
+
+
+    }
+    ul{
+        list-style: none;
+        margin-left: -30px;
+    }
+
+    .suoLueTu1{
+        height: 150px;
+        background-color:#5f5750 ;
+        color: gold;
+        text-align: center;
+    }
+    .suoLueTu2{
+        height: 150px;
+        background-color: #2a2a2a;
+
+    }
+    #geRenZhongXin li{
+        margin-left: 30px;
+    }
+    a:hover{
+        text-decoration: none;
+        color: black;
+    }
+    a{
+        color: #757575;
+    }
+
+</style>
+<script src="../xmym/jquery/jquery.js"></script>
+<script src="../xmym/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+    $(function () {
+        $(".user").mouseover(function () {
+            $(".dropdown-menu-right").show();
+            $('.user').css('backgroundColor','white');
+            $('#user').css('color','#ff6700')
+        });
+        $(".user").mouseout(function () {
+            $(".dropdown-menu-right").hide();
+            $('.user').css('backgroundColor','#333');
+            $('#user').css('color','white')
+        });
+    });
+    $(function () {
+        $(".shop").mouseover(function () {
+            $(".shops").show();
+            $('.news').css('backgroundColor','white');
+            $('.news').css('color','#ff6700')
+        });
+
+        $(".shop").mouseout(function () {
+            $(".shops").hide();
+            $('.news').css('backgroundColor','#333');
+            $('.news').css('color','white')
+        });
+    });
+</script>
+<body>
+<!--导航栏1-->
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a href="#">小米商城</a></li>
+            <li><a href="#">MIUI</a></li>
+            <li><a href="#">米聊</a></li>
+            <li><a href="#">游戏</a></li>
+            <li><a href="#">小米商城手机版</a></li>
+            <li><a href="#">问题反馈</a></li>
+            <li><a href="#">Select Region</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown user" >
+                <a  class="dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" >
+                    1310507313<span class="glyphicon glyphicon-chevron-down" style="margin-left: 10px"></span></a>
+                <div class="dropdown-menu dropdown-menu-right" style="width:100px ">
+                    <ul style="list-style: none">
+                        <li><a href="#">个人中心</a></li>
+                        <li><a href="#">评价晒单</a></li>
+                        <li><a href="#">我的喜欢</a></li>
+                        <li><a href="#">小米账户</a></li>
+                        <li><a href="#">退出登录</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">消息通知</a></li>
+            <li><a href="#">我的订单</a></li>
+            <li class="dropdown shop">
+                <a href="#" class="dropdown-toggle news" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> 购物车(0)</a>
+                <div class="dropdown-menu shops" style="height: 80px;width: 300px">
+                    <div class="text-center" style="margin-top: 20px">购物车中还没有商品，赶紧选购吧！</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--导航栏2-->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header col-lg-1">
+                <img src="../xmym/imgs/hmtb.png" alt="">
+            </div>
+            <div class="col-lg-7">
+                <div id="navContent" class="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            小米商城</a>
+                            <div class="dropdown-menu" style="margin-left: -110px">
+                                <div class="container" >
+                                    <div class="row text-center">
+                                        <div class="col-lg-2 " style="background: #ebcccc">
+                                            <a href="#"><img src="../xmym/imgs/hm.png" alt=""></a><div><a href="#">精品小米</a></div></div>
+                                        <div class="col-lg-2"  style="background: #9acfea">
+                                            <a href="#"><img src="../xmym/imgs/hm.png" alt=""></a><div style="color: red"><a href="#">零售待销</a></div></div>
+                                        <div class="col-lg-2" style="background: #ebcccc">
+                                            <a href="#"><img src="../xmym/imgs/hm.png" alt=""></a><div><a href="#">精品小米</a></div></div>
+                                        <div class="col-lg-2" style="background: #9acfea">
+                                            <a href="#"><img src="../xmym/imgs/hm.png" alt=""></a><div style="color: red"><a href="#">零售待销</a></div></div>
+                                        <div class="col-lg-2" style="background: #ebcccc">
+                                            <a href="#"><img src="../xmym/imgs/hm.png" alt=""></a><div><a href="#">精品小米</a></div></div>
+                                        <div class="col-lg-2" style="background: #9acfea">
+                                            <a href="#"><img src="../xmym/imgs/hm.png" alt=""></a><div style="color: red"><a href="#">零售待销</a></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a  href="#">MIUI</a></li>
+                        <li><a  href="#">米聊</a></li>
+                        <li><a  href="#">游戏</a></li>
+                        <li><a  href="#">多看阅读</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <input class="form-control" type="text" placeholder="请输入关键字搜索">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button" >
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="collapse" id="collapseExample1">
+    <div class="well">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img src="../xmym/image/3.jpg" alt="" style="height: 50%;width: 50%">
+                    <div style="margin-left:15px">
+                        <p>小米6</p>
+                        <p>2499元起</p>
+                    </div>
+                    <div style="border-left: 1px solid black;height: 70px;margin-left: 140px;margin-top:-130px"></div>
+                </div>
+                <div class="col-lg-2">
+                    <img src="../xmym/image/3.jpg" alt="" style="height: 50%;width: 50%">
+                    <div style="margin-left:15px">
+                        <p>小米6</p>
+                        <p>2499元起</p>
+                    </div>
+                    <div style="border-left: 1px solid black;height: 70px;margin-left: 140px;margin-top:-130px"></div>
+                </div>
+                <div class="col-lg-2">
+                    <img src="../xmym/image/3.jpg" alt="" style="height: 50%;width: 50%">
+                    <div style="margin-left:15px">
+                        <p>小米6</p>
+                        <p>2499元起</p>
+                    </div>
+                    <div style="border-left: 1px solid black;height: 70px;margin-left: 140px;margin-top:-130px"></div>
+                </div>
+                <div class="col-lg-2">
+                    <img src="../xmym/image/3.jpg" alt="" style="height: 50%;width: 50%">
+                    <div style="margin-left:15px">
+                        <p>小米6</p>
+                        <p>2499元起</p>
+                    </div>
+                    <div style="border-left: 1px solid black;height: 70px;margin-left: 140px;margin-top:-130px"></div>
+                </div>
+                <div class="col-lg-2">
+                    <img src="../xmym/image/3.jpg" alt="" style="height: 50%;width: 50%">
+                    <div style="margin-left:15px">
+                        <p>小米6</p>
+                        <p>2499元起</p>
+                    </div>
+                    <div style="border-left: 1px solid black;height: 70px;margin-left: 140px;margin-top:-130px"></div>
+                </div>
+                <div class="col-lg-2">
+                    <img src="../xmym/image/3.jpg" alt="" style="height: 50%;width: 50%">
+                    <div style="margin-left:15px">
+                        <p>小米6</p>
+                        <p>2499元起</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--选购路由器 · 智能硬件栏目-->
+<ol class="breadcrumb" style="background-color: rgb(240,240,240);margin-top: -20px;margin-left: 100px">
+    <li><a href="../xmym/mnxmym.html">首页</a></li>
+    <li><a href="#">所有商品</a></li>
+    <li><a href="#">路由器 / 智能硬件</a></li>
+</ol>
+<!--全部商品栏目-->
+
+
+<div class="container-fluid">
+    <div class="row" style="background-color: white;height:120px;">
+        <div class="row text-center" style="margin-top:30px">
+          <div class="col-lg-2"><p style="color: black">分类:</p></div>
+          <div class="col-lg-2"><a href="#">路由器</a></div>
+          <div class="col-lg-2"><a href="#">净化器</a></div>
+          <div class="col-lg-2"><a href="">净水器</a></div>
+          <div class="col-lg-2"><a href="">摄像机</a></div>
+          <div class="col-lg-2"><a role="button" data-toggle="collapse" href="#one" aria-expanded="false" aria-controls="collapseExample">更多<span class="glyphicon glyphicon-chevron-down"></span></a></div>
+        </div>
+        <div class="collapse" id="one">
+            <div class="well">
+               <p><img src="image/zhedie01.png" alt=""></p>
+            </div>
+        </div>
+        <div class="row" style="border-top: 1px solid black;width:1170px;margin-left: 90px"></div>
+        <div class="row text-center" style="margin-top:10px">
+            <div class="col-lg-2"><p style="color: black">品牌:</p></div>
+            <div class="col-lg-2"><a href="#">智米</a></div>
+            <div class="col-lg-2"><a href="#">小方</a></div>
+            <div class="col-lg-2"><a href="">米家</a></div>
+            <div class="col-lg-2"><a href="">小蚁</a></div>
+            <div class="col-lg-2"><a data-toggle="collapse" href="#one" aria-expanded="false" aria-controls="collapseExample">更多<span class="glyphicon glyphicon-chevron-down"></span></a></div>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-3"><a href="">推荐</a></div>
+                <div class="col-lg-3"><a href="">新品</a></div>
+                <div class="col-lg-3"><a href="">价格</a></div>
+                <div class="col-lg-3"><a href="">评论更多</a></div>
+            </div>
+            <div style="border-left: 1px solid black;height: 20px;margin-left:60px;margin-top: -20px"></div>
+            <div style="border-left: 1px solid black;height: 20px;margin-left:160px;margin-top: -20px"></div>
+            <div style="border-left: 1px solid black;height: 20px;margin-left:255px;margin-top: -20px"></div>
+        </div>
+        <div class="col-lg-offset-4 col-lg-4">
+            <div class="row">
+                <form action="#" class="form-inline">
+                    <div class="radio col-lg-4">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                           查看评价
+                        </label>
+                    </div>
+                    <div class="radio col-lg-4">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            仅显示特惠商品
+                        </label>
+                    </div>
+                    <div class="radio col-lg-4">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2">
+                           仅显示有货商品
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"><img src="image/截图01.png" alt="" style="margin-left: -10px"></div>
+        <div class="col-lg-3"><img src="image/截图01.png" alt=""></div>
+        <div class="col-lg-3"><img src="image/截图01.png" alt="" style="margin-left: 10px"></div>
+        <div class="col-lg-3"><img src="image/截图01.png" alt="" style="margin-left:20px"></div>
+        
+    </div>
+</div>
+<!--底部服务栏目和版税说明栏目-->
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-lg-3">
+            <a href="#"><img src="../xmym/imgs/wxtb.png" alt="" style="height: 30px;width: 30px">预约维修服务</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img src="../xmym/imgs/th.png" alt="" style="height: 30px;width: 30px">7天无理由退货</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img src="../xmym/imgs/thq.png" alt="" style="height: 30px;width: 30px">15天免费换货</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img src="../xmym/imgs/sh.png" alt="" style="height: 30px;width: 30px">520余家售后网点</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="col-lg-2">
+                <a href="#">帮助中心</a>
+                <ul style="margin-top: 20px;list-style: none">
+                    <li><a href="#">账户管理</a></li>
+                    <li ><a href="#">购物售后</a></li>
+                    <li><a href="#">订单操作</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <a href="#">服务支持</a>
+                <ul style="margin-top: 20px;list-style: none">
+                    <li><a href="#">账户管理</a></li>
+                    <li ><a href="#">购物售后</a></li>
+                    <li><a href="#">订单操作</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <a href="#">线下门店</a>
+                <ul style="margin-top: 20px;list-style: none">
+                    <li><a href="#">账户管理</a></li>
+                    <li ><a href="#">购物售后</a></li>
+                    <li><a href="#">订单操作</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <a href="#">关于小米</a>
+                <ul style="margin-top: 20px;list-style: none">
+                    <li><a href="#">账户管理</a></li>
+                    <li ><a href="#">购物售后</a></li>
+                    <li><a href="#">订单操作</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <a href="#">关注我们</a>
+                <ul style="margin-top: 20px;list-style: none">
+                    <li><a href="#">账户管理</a></li>
+                    <li ><a href="#">购物售后</a></li>
+                    <li><a href="#">订单操作</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <a href="#">特色服务</a>
+                <ul style="margin-top: 20px;list-style: none">
+                    <li><a href="#">账户管理</a></li>
+                    <li ><a href="#">购物售后</a></li>
+                    <li><a href="#">订单操作</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-2" style="border-left: 1px solid black">
+            <h3 style="color: yellow">224-143131</h3>
+            <p>周一至周五24小时</p>
+            <p style="border: 1px solid red;width: 150px;height: 20px;text-align: center">24小时在线客服</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <img src="../xmym/imgs/hmtb.png" alt="">
+        </div>
+        <div class="col-lg-6">
+            <ul class="nav navbar-nav">
+                <li><a href="#">小米商城</a></li>
+                <li><a href="#">MIUI</a></li>
+                <li><a href="#">米聊</a></li>
+                <li><a href="#">游戏</a></li>
+                <li><a href="#">小米商城手机版</a></li>
+                <li><a href="#">问题反馈</a></li>
+                <li><a href="#">Select Region</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <div class="col-lg-3">
+                <span><img src="../xmym/imgs/hmtb.png" alt="" style="height: 20px;width: 20px"> 问题反馈</span>
+            </div>
+            <div class="col-lg-3">
+                <span><img src="../xmym/imgs/4G+.jpg" alt="" style="height: 20px;width: 20px">诚信经营</span>
+            </div>
+            <div class="col-lg-3"><img src="../xmym/imgs/xrp.png" alt="" style="height: 20px;width: 20px">信誉良久</div>
+            <div class="col-lg-3"><img src="../xmym/imgs/xrp.png" alt="" style="height: 20px;width: 20px">反馈快捷</div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: center">生命诚可贵，有钱很重要！</div>
+    </div>
+</div>
+</body>
+</html>
